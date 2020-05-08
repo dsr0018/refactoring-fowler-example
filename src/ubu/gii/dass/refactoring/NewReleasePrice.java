@@ -1,11 +1,12 @@
 package ubu.gii.dass.refactoring;
 
 public class NewReleasePrice extends Price{
-	int getPriceCode() {
-		return Movie.NEW_RELEASE;
-		}
 	
 	double getCharge(Rental rental){
 		return rental.getDaysRented() * 3;
+		}
+	
+	int getFrecuentRenterPoints(Rental rental) {
+		return (rental.getDaysRented() > 1) ?2:1;
 		}
 }
