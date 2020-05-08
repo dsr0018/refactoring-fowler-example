@@ -17,7 +17,7 @@ public class Movie {
 	public static final int NEW_RELEASE = 1;
 
 	private String _title;
-	private Price _price;
+	Price _price;
 
 	public Movie(String title, int priceCode) {
 		_title = title;
@@ -50,15 +50,5 @@ public class Movie {
 
 	public double getCharge(Rental rental) {
 		return _price.getCharge(rental);
-	}
-
-	public int getFrecuentRenterPoints(Rental rental) {
-		// add frequent renter points
-		int frequentRenterPoints=1;
-		// add bonus for a two day new release rental
-		if ((rental.getMovie().getPriceCode() == Movie.NEW_RELEASE)
-				&& rental.getDaysRented() > 1)
-			frequentRenterPoints++;
-		return frequentRenterPoints;
 	}
 }
