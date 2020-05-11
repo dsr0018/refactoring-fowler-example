@@ -12,10 +12,6 @@ package ubu.gii.dass.refactoring;
  */
 
 public class Movie {
-	public static final int CHILDRENS = 2;
-	public static final int REGULAR = 0;
-	public static final int NEW_RELEASE = 1;
-
 	private String _title;
 	Price _price;
 
@@ -26,13 +22,13 @@ public class Movie {
 
 	public void setPriceCode(int arg) {
 		switch (arg) {
-			case Movie.REGULAR:
+			case Price.REGULAR:
 				_price = new RegularPrice();
 				break;
-			case Movie.CHILDRENS:
+			case Price.CHILDRENS:
 				_price = new ChildrensPrice();
 				break;
-			case Movie.NEW_RELEASE:
+			case Price.NEW_RELEASE:
 				_price = new NewReleasePrice();
 				break;
 			default:
