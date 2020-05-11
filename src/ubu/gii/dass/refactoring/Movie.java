@@ -15,11 +15,26 @@ public class Movie {
 	private String _title;
 	Price _price;
 
+	public Movie(String title, Price price) {
+		_title = title;
+		setPrice(price);
+	}
+	
+	/**
+	 * @deprecated Use {@link #Movie(String,Price)} instead
+	 */
 	public Movie(String title, int priceCode) {
 		_title = title;
 		setPriceCode(priceCode);
 	}
-
+	
+	public void setPrice(Price price) {
+		_price=price;
+	}
+	
+	/**
+	 * @deprecated Use {@link #setPrice(Price)} instead
+	 */
 	public void setPriceCode(int arg) {
 		switch (arg) {
 			case Price.REGULAR:
